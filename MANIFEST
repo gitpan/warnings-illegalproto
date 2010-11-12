@@ -1,0 +1,11 @@
+Changes
+LICENSE
+MANIFEST
+META.json
+Makefile.PL
+README
+dist.ini
+lib/warnings/illegalproto.pm
+t/basic.t
+t/basic2.t
+t/release-pod-syntax.t
