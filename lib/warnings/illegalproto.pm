@@ -1,6 +1,6 @@
 package warnings::illegalproto;
-BEGIN {
-  $warnings::illegalproto::VERSION = '0.001000';
+{
+  $warnings::illegalproto::VERSION = '0.001001';
 }
 
 # ABSTRACT: Disable illegal prototype warnings on old Perls
@@ -37,8 +37,8 @@ sub unimport {
 
 1;
 
-
 __END__
+
 =pod
 
 =head1 NAME
@@ -47,7 +47,7 @@ warnings::illegalproto - Disable illegal prototype warnings on old Perls
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 SYNOPSIS
 
@@ -76,10 +76,9 @@ Arthur Axel "fREW" Schmidt <frioux+cpan@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Arthur Axel "fREW" Schmidt.
+This software is copyright (c) 2012 by Arthur Axel "fREW" Schmidt.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

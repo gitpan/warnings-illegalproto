@@ -4,28 +4,28 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Disable illegal prototype warnings on old Perls',
-  'AUTHOR' => 'Arthur Axel "fREW" Schmidt <frioux+cpan@gmail.com>',
-  'BUILD_REQUIRES' => {},
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+  "ABSTRACT" => "Disable illegal prototype warnings on old Perls",
+  "AUTHOR" => "Arthur Axel \"fREW\" Schmidt <frioux+cpan\@gmail.com>",
+  "BUILD_REQUIRES" => {},
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'warnings-illegalproto',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'warnings::illegalproto',
-  'PREREQ_PM' => {
-    'Test::More' => '0.92',
-    'strictures' => '1'
+  "DISTNAME" => "warnings-illegalproto",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "warnings::illegalproto",
+  "PREREQ_PM" => {
+    "Test::More" => "0.92",
+    "strictures" => 1
   },
-  'VERSION' => '0.001000',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.001001",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 
