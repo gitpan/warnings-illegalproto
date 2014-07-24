@@ -4,7 +4,7 @@
       "Arthur Axel \"fREW\" Schmidt <frioux+cpan@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.141170",
    "license" : [
       "perl_5"
    ],
@@ -26,19 +26,27 @@
       },
       "runtime" : {
          "requires" : {
-            "Test::More" : "0.92",
             "strictures" : "1"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Test::More" : "0.92"
          }
       }
    },
    "release_status" : "stable",
    "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/frioux/warnings-illegalproto/issues"
+      },
+      "homepage" : "https://github.com/frioux/warnings-illegalproto",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/frioux/warnings-illegalproto",
-         "web" : "http://github.com/frioux/warnings-illegalproto"
+         "url" : "https://github.com/frioux/warnings-illegalproto.git",
+         "web" : "https://github.com/frioux/warnings-illegalproto"
       }
    },
-   "version" : "0.001001"
+   "version" : "0.001002"
 }
 

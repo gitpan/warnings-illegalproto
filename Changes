@@ -1,5 +1,9 @@
 Revision history for warnings-illegalproto
 
+0.001002  2014-07-23 20:44:38-05:00 America/Chicago
+    - Fix overeager warnings disablement (Thanks Graham Knop for fix and pjfl
+      for bug report)
+
 0.001001  2012-11-17 16:31:55 CST6CDT
     - Put MetaYAML back in dist
 

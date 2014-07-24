@@ -1,37 +1,46 @@
 package warnings::illegalproto;
-{
-  $warnings::illegalproto::VERSION = '0.001001';
-}
-
+$warnings::illegalproto::VERSION = '0.001002';
 # ABSTRACT: Disable illegal prototype warnings on old Perls
 
 our $WARN;
-
+{
+  no warnings;
+  use warnings 'syntax';
+  no warnings qw(
+    ambiguous
+    bareword
+    digit
+    parenthesis
+    precedence
+    printf
+    prototype
+    qw
+    reserved
+    semicolon
+  );
+  BEGIN { $WARN = ${^WARNING_BITS} };
+}
+use strict;
 use warnings;
 
-BEGIN { $WARN = ${^WARNING_BITS} }
+BEGIN {
+  *_ILLEGALPROTO_SUPPORTED = $] >= 5.012 ? sub(){1} : sub(){0};
+}
 
-no warnings 'syntax';
-use warnings qw(
-  ambiguous
-  bareword
-  digit
-  parenthesis
-  precedence
-  printf
-  prototype
-  qw
-  reserved
-  semicolon
-);
-
-BEGIN { $WARN = ${^WARNING_BITS} & ~$WARN }
+sub import {
+   if (_ILLEGALPROTO_SUPPORTED) {
+      warnings->import('illegalproto')
+   }
+   else {
+      ${^WARNING_BITS} |= $WARN
+   }
+}
 
 sub unimport {
-   if ($] >= 5.012000) {
+   if (_ILLEGALPROTO_SUPPORTED) {
       warnings->unimport('illegalproto')
    } else {
-      ${^WARNING_BITS} = $WARN
+      ${^WARNING_BITS} &= ~ $WARN
    }
 }
 
@@ -41,13 +50,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 warnings::illegalproto - Disable illegal prototype warnings on old Perls
 
 =head1 VERSION
 
-version 0.001001
+version 0.001002
 
 =head1 SYNOPSIS
 
@@ -76,7 +87,7 @@ Arthur Axel "fREW" Schmidt <frioux+cpan@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Arthur Axel "fREW" Schmidt.
+This software is copyright (c) 2014 by Arthur Axel "fREW" Schmidt.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
