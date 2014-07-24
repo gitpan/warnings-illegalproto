@@ -2,7 +2,7 @@ NAME
     warnings::illegalproto - Disable illegal prototype warnings on old Perls
 
 VERSION
-    version 0.001002
+    version 0.001003
 
 SYNOPSIS
      use strictures 1;
